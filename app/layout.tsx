@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google"
-
-import "./globals.css"
+import { Header } from "@/components/common/Header";
+import { Footer } from "@/components/common/Footer";
+import "@/style/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
 
@@ -26,7 +27,20 @@ export default function RootLayout({
       className={cn("antialiased", fontMono.variable, "font-sans", fontSans.variable)}
     >
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="flex flex-col h-screen">
+            <Header />
+            <main className="flex-1 container mx-auto px-6">
+              {children}
+            </main>
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   )
