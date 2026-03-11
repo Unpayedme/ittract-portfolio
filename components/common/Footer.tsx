@@ -20,7 +20,7 @@ export function Footer() {
                     </ul>
                 </div>
                 <div className="flex flex-col gap-1">
-                    <ul className="text-muted-foreground text-sm">
+                    <ul className="text-muted-foreground text-sm ">
                         <li className="text-lg font-bold text-black dark:text-white">Connect</li>
                         <li><Link href="#" className="hover:underline text-md">LinkIn</Link></li>
                         <li><Link href="#" className="hover:underline">Facebook</Link></li>
