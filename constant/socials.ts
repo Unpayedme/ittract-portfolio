@@ -1,12 +1,13 @@
-import { LucideIcon, Mail, PhoneCall } from "lucide-react"; 
+import { LucideIcon, Mail, PhoneCall , Github, Facebook, Linkedin } from "lucide-react"; 
 
 type social_types = {
     icon: LucideIcon;
-    title: string;
+    title?: string;
     link?: string;
-    name: string;
-    description: string;
+    name?: string;
+    description?: string;
 }
+
 
 export const social_data: social_types[] = [
     {
@@ -21,6 +22,21 @@ export const social_data: social_types[] = [
         title: "PHONE NUMBER",
         name: "09097748071",
         description: "Online and available during standard business hours."
+    },
+]
+
+export const contact_data: social_types[] = [
+    {
+        icon: Github,
+        link: "https://github.com/unpayedme"
+    },
+    {
+        icon: Facebook,
+        link: "https://www.facebook.com/jvsefuesca"
+    },
+    {
+        icon: Linkedin,
+        link: "https://www.Linkedin.com/jvsefuesca"
     },
 ]
 

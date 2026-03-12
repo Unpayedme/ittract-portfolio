@@ -5,7 +5,7 @@ import { Cpu, CodeXml  } from "lucide-react";
 export function Teckstack(){
     return(
         <Section id="Teckstack" className="">
-            <div className="container mx-auto flex px-20 flex flex-col">
+            <div className="container mx-auto flex px-20 flex flex-col border-t-2 border-b-2 border-slate-200 pt-7 pb-10">
                 
                 <div className="text-3xl font-bold text-center flex gap-3 justify-end">
                     <CodeXml className="text-center flex justify-center size-10"/> 

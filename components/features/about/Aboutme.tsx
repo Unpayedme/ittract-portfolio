@@ -6,9 +6,9 @@ import { Info } from "lucide-react";
 export function Aboutme() {
     return (
         <Section id="Aboutme" className="">
-            <div className="container mx-auto flex flex-col px-20">
+            <div className="container mx-auto flex flex-col px-20 border-b-2 border-t-2 border-slate-200 pt-7 pb-10">
                 
-                <div className="text-3xl font-bold flex gap-4 ">
+                <div className="text-3xl font-bold flex gap-4">
                     <Info className="text-center size-10"/> ABOUT ME
                 </div>
                 
