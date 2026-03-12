@@ -3,7 +3,7 @@ import { Textarea } from "@/components/ui/textarea"
 
 export function ContactForm() {
     return (
-        <div className="container mx-auto flex flex-col flex-1 border-t-2 border-b-2 border-slate-200 p-4 gap-3">
+        <div className="container mx-auto flex flex-col flex-1 border-2 rounded-md border-slate-200 p-4 gap-3">
             <div>
                 <h1 className="text-foreground text-center font-bold">Let’s Build Something Meaningful</h1>
                 <p className="text-muted-foreground text-center">Currently accepting new projects and creative collaborations. If you have a vision you'd like to bring to life, let’s start the conversation. </p>

@@ -1,8 +1,9 @@
+import { ProjectSection } from "@/components/features/project/ProjectSection"; 
 
 export default function Project(){
     return(
-        <div>
-            Project page
-        </div>
+        <>
+            <ProjectSection />
+        </>
     );
 }
