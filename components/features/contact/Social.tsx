@@ -27,7 +27,7 @@ export function Social() {
                             </Link>
                         </div>
                         <div className="text-muted-foreground">
-                            I aim to respond to all inquiries within a business hour.
+                            {data.description}
                         </div>
                     </div>
                 ))
