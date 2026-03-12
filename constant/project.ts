@@ -1,4 +1,4 @@
-type Project_type = {
+export type Project_type = {
 	imageURL: string;
 	title: string;
 	description: string;
@@ -15,14 +15,14 @@ export const project_data: Project_type[] = [
         imageURL: "/randomriddles.jpg",
         title: "Random Riddles",
         description: "Random Riddles is a simple app that gives you a new riddle every time you play. Test your thinking skills, guess the answer, and reveal the solution. Each riddle brings a quick mental challenge and keeps your mind active.",
-        category: ["web Application","html","css","javascript"],
+        category: ["web application","html","css","javascript"],
         link: "https://randomriddles.netlify.app/"
     },
     {
         imageURL: "/gymsystem.jpg",
         title: "Gym System Analytics",
         description: "A data-driven hub that replaces manual spreadsheets with precise analytics to bridge the gap between gym administration and business growth.",
-        category: ["web Application","Nextjs","tailwindcss","NeonDB"],
+        category: ["web application","Nextjs","tailwindcss","neondb"],
         link: "https://it-tract-final.vercel.app/"
     },
     {

@@ -21,22 +21,32 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge"
 import { SearchIcon, Mail } from "lucide-react";
-import { project_data, categories } from "@/constant/project";
+import { project_data, categories, Project_type } from "@/constant/project";
 import Link from "next/link"
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 
 export function ProjectSection() {
-    let projectData  = project_data;
-    const [ pdata, setPData ] = useState(projectData);
-    
-    // function filterByCategory(data: string[], cat: string ){
-    //     let filteredData = data.filter(data => data.catagory.include());
-    // }
-    
+    let projectData = project_data.map((data) => {
+        return {
+            ...data,
+            category: data.category.map(x => x.toLowerCase().trim())
+        };
+    });
+
+    //console.log("filtereddata: ",projectData);        
+
+    const [pdata, setPData] = useState(projectData);
+
+    function filterByCategory(data: Project_type[], cat: string) {
+        cat.toLocaleLowerCase().trim()
+        let filteredData = data.filter(data => data.category.includes(cat));
+        setPData(filteredData);
+    }
+    //console.log("curerentData: ", pdata)
 
     return (
         <Section>
-            <div className="container mx-auto flex flex-col gap-3">
+            <div className="container mx-auto flex flex-col gap-3 mb-20">
                 <div className="items-center">
                     <h1 className="text-foregroud font-extrabold text-3xl text-center">My Projects</h1>
                     <p className="text-muted-foreground text-center text-xm">Building functional digital experiences with a focus on refined aesthetics and clean code.</p>
@@ -51,23 +61,23 @@ export function ProjectSection() {
                 </div>
                 <div className="flex gap-2 mb-10">
                     <div>
-                        <Link href="/projects">
-                            <Button variant="outline">ALL</Button>
-                        </Link>
+                        <Button variant="outline" onClick={() => setPData(projectData)}>all</Button>
                     </div>
                     {
                         categories.map((data, index) => (
-                            <div className="" key={index}>                            
-                                <Button variant="outline">{data.category.toUpperCase()}</Button>
+                            <div className="" key={index}>
+                                <Button variant="outline" onClick={() => filterByCategory(project_data, data.category)}>
+                                    {data.category.toLowerCase()}
+                                </Button>
                             </div>
                         ))
                     }
                 </div>
                 {
-                    project_data.length > 0 ?
+                    pdata.length > 0 ?
                         <div className="container mx-auto flex grid grid-cols-3 gap-4 ">
                             {
-                                project_data.map((data, index) => (
+                                pdata.map((data, index) => (
                                     <Card className="relative mx-auto w-full max-w-sm pt-0 transition-all hover:shadow-xl duration-500 hover:scale-103" key={index}>
                                         <div className="absolute inset-0 z-30 aspect-video" />
                                         <img
@@ -99,7 +109,7 @@ export function ProjectSection() {
 
                         </div>
                         :
-                        <div className="text-muted-foreground text-center mt-30">
+                        <div className="text-muted-foreground text-center mt-30 mb-70">
                             Project in progress. New works arriving soon...
                         </div>
                 }

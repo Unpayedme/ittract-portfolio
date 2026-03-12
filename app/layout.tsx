@@ -26,6 +26,9 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn("antialiased", fontMono.variable, "font-sans", fontSans.variable)}
     >
+      <head>
+        <title>John Vincent Sefuesca - Portfolio</title>
+      </head>
       <body>
         <ThemeProvider
           attribute="class"
