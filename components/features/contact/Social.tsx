@@ -8,11 +8,11 @@ export function Social() {
     social_data.map
 
     return (
-        <div className="container mx-auto flex flex-col flex-1 flex gap-2">
+        <div className="container mx-auto flex flex-col flex-1 flex gap-4">
             {
                 social_data.map(({ icon: Icon, ...data }, index) => (
 
-                    <div className="flex flex-col gap-2 border border-slate-200 rounded-md p-4" key={index}>
+                    <div className="flex flex-col gap-2 border border-slate-200 rounded-md p-5" key={index}>
                         <div className="flex text-lg gap-2">
                             <div className="text-center flex justify-center">
                                 <Icon />
