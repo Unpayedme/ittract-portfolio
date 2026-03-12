@@ -25,7 +25,7 @@ export function Aboutme() {
                         </p>
                     </div>
                     <div className="flex-1 relative mt-4 items-center flex justify-firts">
-                        <Image src="/malupiton.jpg" alt="my image" width={400} height={400} className="object-cover grayscale hover:grayscale-0 transition-all duration-300 hover:scale-102 rounded-md aspect-[3/4] origin-bottom" />
+                        <Image src="/malupiton.jpg" alt="my image" width={400} height={400} className="object-cover grayscale hover:grayscale-0 transition duration-500 hover:scale-102 rounded-md aspect-[3/4]" />
                     </div>
                 </div>
 
