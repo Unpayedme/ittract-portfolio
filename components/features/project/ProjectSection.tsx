@@ -10,6 +10,8 @@ import {
 import { SearchIcon, Mail } from "lucide-react";
 
 export function ProjectSection() {
+    let data:string[] = [];
+
     return (
         <Section>
             <div className="container mx-auto flex flex-col gap-3">
@@ -25,6 +27,19 @@ export function ProjectSection() {
                         </InputGroupAddon>
                     </InputGroup>
                 </div>
+                <div>   
+
+                </div>
+                {
+                    data ? 
+                    <div className="text-muted-foreground text-center mt-30">
+                        Project in progress. New works arriving soon... 
+                    </div>
+                    : 
+                    <div>
+                        
+                    </div>
+                }
             </div>
         </Section>
     );
