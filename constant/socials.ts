@@ -23,6 +23,30 @@ export const social_data: social_types[] = [
         name: "09097748071",
         description: "Online and available during standard business hours."
     },
+    // {
+    //     icon:   PhoneCall,
+    //     title: "PHONE NUMBER",
+    //     name: "09097748071",
+    //     description: "Online and available during standard business hours."
+    // },
+    // {
+    //     icon:   PhoneCall,
+    //     title: "PHONE NUMBER",
+    //     name: "09097748071",
+    //     description: "Online and available during standard business hours."
+    // },
+    // {
+    //     icon:   PhoneCall,
+    //     title: "PHONE NUMBER",
+    //     name: "09097748071",
+    //     description: "Online and available during standard business hours."
+    // },
+    // {
+    //     icon:   PhoneCall,
+    //     title: "PHONE NUMBER",
+    //     name: "09097748071",
+    //     description: "Online and available during standard business hours."
+    // },
 ]
 
 export const contact_data: social_types[] = [

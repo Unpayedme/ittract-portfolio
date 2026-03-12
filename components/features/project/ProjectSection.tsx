@@ -20,7 +20,7 @@ export function ProjectSection() {
                     <p className="text-muted-foreground text-center text-xm">Building functional digital experiences with a focus on refined aesthetics and clean code.</p>
                 </div>
                 <div>
-                    <InputGroup>
+                    <InputGroup className="">
                         <InputGroupInput placeholder="Search..." />
                         <InputGroupAddon>
                             <SearchIcon />

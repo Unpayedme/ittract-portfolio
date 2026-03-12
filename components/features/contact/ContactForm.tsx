@@ -25,9 +25,9 @@ export function ContactForm() {
                 </div>
             </div>
             <div className="flex-1">
-                <div className="flex flex-col w-full">
+                <div className="flex flex-col w-full h-full">
                     <label htmlFor="fname">How can I help you? <span className="text-muted-foreground text-xs">Max 500 characters</span></label>
-                    <Textarea className=""/>
+                    <Textarea className="h-full"/>
                 </div>
             </div>
             <div className="">   
