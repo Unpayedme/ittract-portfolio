@@ -51,13 +51,12 @@ export function FeaturedProjects() {
                             </Card>
                         ))
                     }
-                    <div className="items-center flex justify-center">
-                        <Link href={"/projects"}>
-                            <Button className="h-8">View All Projects</Button>
-                        </Link>     
-                    </div>
                 </div>
-
+                <div className="items-center flex justify-center">
+                    <Link href={"/projects"}>
+                        <Button className="h-8">View All Projects</Button>
+                    </Link>
+                </div>
             </div>
         </Section>
     );
