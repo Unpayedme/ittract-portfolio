@@ -13,7 +13,7 @@ export const social_data: social_types[] = [
     {
         icon:   Mail,
         title: "EMAIL",
-        link: "mailto:info.arielbatoon@gmail.com",
+        link: "mailto:jv.sefuesca@gmail.com",
         name: "jv.sefuesca@gmail.com",
         description: "I aim to respond to all inquiries within a business hour."
     },

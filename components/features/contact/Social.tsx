@@ -44,7 +44,7 @@ export function Social() {
                 <div className="flex gap-5 flex-row items-center justify-around py-5" >
                     {
                         contact_data.map(({icon: Icon, ...data}, index) => (
-                            <Link href={data.link ? data.link : "#"} target="_blank" key={index} className="border-2 border-slate-200 rounded-md">
+                            <Link href={data.link ? data.link : "#"} target="_blank" key={index} className="border-2 border-slate-200 rounded-md animate-bounce hover:animate-none">
                                 <Icon size={50} className="p-1"/>
                             </Link>
                         ))
