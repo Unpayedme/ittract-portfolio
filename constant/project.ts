@@ -55,7 +55,7 @@ export const categories: categories_type[] = [
         category: "react"
     },
     {
-        category: "NeonDB"
+        category: "neondb"
     },
     {
         category: "html"

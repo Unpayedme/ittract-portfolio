@@ -29,7 +29,7 @@ export function ProjectSection() {
     let projectData = project_data.map((data) => {
         return {
             ...data,
-            category: data.category.map(x => x.toLowerCase().trim())
+            category: data.category.map(x => x.toUpperCase().trim())
         };
     });
 
@@ -38,7 +38,7 @@ export function ProjectSection() {
     const [pdata, setPData] = useState(projectData);
 
     function filterByCategory(data: Project_type[], cat: string) {
-        cat.toLocaleLowerCase().trim()
+        cat.toUpperCase().trim()
         let filteredData = data.filter(data => data.category.includes(cat));
         setPData(filteredData);
     }

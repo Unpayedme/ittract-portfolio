@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Section } from "@/components/common/Section";
 import "@/style/globals.css"
 import { Info } from "lucide-react";
+import { ProfileImage } from "@/components/common/ProfileImage";
 
 export function Aboutme() {
     return (
@@ -24,11 +25,10 @@ export function Aboutme() {
                             My main focus these days is learning how to build accessible and inclusive digital products while growing my knowledge in modern web technologies.
                         </p>
                     </div>
-                    <div className="flex-1 relative mt-4 items-center flex justify-firts">
-                        <Image src="/malupiton.jpg" alt="my image" width={400} height={400} className="object-cover grayscale hover:grayscale-0 transition duration-500 hover:scale-102 rounded-md aspect-[3/4]" />
+                    <div className="flex-1">
+                        <ProfileImage />
                     </div>
                 </div>
-
             </div>
         </Section>
     );
