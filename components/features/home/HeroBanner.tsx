@@ -7,8 +7,8 @@ import { LucideIcon, Mail, PhoneCall, Github, Facebook, Linkedin } from "lucide-
 
 export function HeroBanner() {
     return (
-        <Section className="">
-            <div className="container mx-auto flex xl:flex-row lg:flex-cols items-center gap-3 flex-col md:gap-1 border-t-2 border-b-2 border-slate-200 py-20 w-full">
+        <Section className="flex">
+            <div className="container mx-auto flex xl:flex-row lg:flex-cols items-center gap-3 flex-col md:gap-1 border-t-2 border-b-2 border-slate-200 py-20 w-full flex-1">
 
                 <div className="flex-1 items-center flex justify-center mb-5">
                     <ProfileImage />

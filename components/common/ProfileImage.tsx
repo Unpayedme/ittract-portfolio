@@ -14,6 +14,7 @@ export function ProfileImage() {
                     alt="my image" 
                     width={350} 
                     height={350} 
+                    loading="eager"
                     className="grayscale hover:grayscale-0 transition-transform duration-500 hover:scale-102 rounded-md aspect-[3/4] rotate-2 hover:rotate-0 infinite ease-in" 
                 />
         </div>
