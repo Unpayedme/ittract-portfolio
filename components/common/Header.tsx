@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ModeToggle } from "@/components/common/Buttontoggle";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
     DropdownMenu,
@@ -33,7 +33,13 @@ export function Header() {
                     <Drawer direction="top">
                         <DrawerTrigger><Menu /></DrawerTrigger>
                         <DrawerTitle></DrawerTitle>
-                        <DrawerContent className="text-center text-xl bg-muted-foreground/40 gap-15 flex flex-col justify-center">
+                        <DrawerContent className="text-center font-extrabold text-xl bg-white gap-15 flex flex-col justify-center dark:text-black">
+                            <DrawerHeader className="flex flex-row justify-between">
+                                <DrawerDescription className="font-bold text-2xl flex justify-start text-center items-center">SEFUESCA.DEV</DrawerDescription>
+                                <DrawerClose className="flex gap-3 justify-end">
+                                    <X className="items-center size-10 flex justify-center text-center"/>
+                                </DrawerClose>
+                            </DrawerHeader>
                             <DrawerClose asChild className="text-center">
                                 <Link href={"/"}>HOME</Link>
                             </DrawerClose>

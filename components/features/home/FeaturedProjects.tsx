@@ -16,7 +16,7 @@ import Link from "next/link";
 export function FeaturedProjects() {
     return (
         <Section>
-            <div className="container mx-auto flex flex-col gap-10 border-t-2 border-b-2 border-slate-200 py-20 flex-1 w-full">
+            <div className="container mx-auto flex flex-col gap-10 border-t-2 border-b-2 border-slate-200 py-20">
                 <div className="">
                     <h1 className="text-center lg:text-5xl font-extrabold">Featured Projects</h1>
                 </div>
