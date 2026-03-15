@@ -32,7 +32,7 @@ export function Header() {
         <div className="flex flex-col border-b-2 border-slate-200 w-full h-18 flex-shrink-0 sticky top-0 z-50 bg-white dark:bg-black">
             <div className="container mx-auto flex gap-2 justify-around items-center size-full md:px-30">
                 <h1 className="font-bold text-2xl flex justify-start">SEFUESCA.DEV</h1>
-                <div className="flex md:hidden items-center justify-end gap-4">
+                <div className="flex sm:hidden items-center justify-end gap-4">
                     <ModeToggle />
                     <Drawer direction="top">
                         <DrawerTitle>
@@ -40,7 +40,7 @@ export function Header() {
                                 <Menu />
                             </DrawerTrigger>
                         </DrawerTitle>
-                        <DrawerContent className="text-center font-bold text-xl bg-white gap-0 flex flex-col justify-center dark:text-black opacity-100 m-w-full opacity-70">
+                        <DrawerContent className="text-center text-lg bg-white gap-0 flex flex-col justify-center dark:text-black m-w-full opacity-70">
                             <DrawerHeader className="flex flex-row justify-between">
                                 <DrawerDescription className="font-bold text-2xl flex justify-start text-center items-center pr-10">
                                     SEFUESCA.DEV
@@ -73,7 +73,7 @@ export function Header() {
                         </DrawerContent>
                     </Drawer>
                 </div>
-                <div className="flex gap-5 items-center hidden md:flex">
+                <div className="flex gap-5 items-center hidden sm:flex">
                     <ul className="gap-5 text-md font-bold flex">
                         <li>
                             <Link href="/" className="hover:underline">

@@ -12,7 +12,7 @@ export function Social() {
             {
                 social_data.map(({ icon: Icon, ...data }, index) => (
 
-                    <div className="flex flex-col gap-2 border border-slate-200 rounded-md p-5 hover:bg-slate-200/40" key={index}>
+                    <div className="flex flex-col gap-2 border border-slate-200 rounded-md p-5 hover:bg-slate-200/40 " key={index}>
                         <div className="flex text-lg gap-2">
                             <div className="text-center flex justify-center">
                                 <Icon />

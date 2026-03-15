@@ -25,6 +25,8 @@ import { project_data, categories, Project_type } from "@/constant/project";
 import Link from "next/link"
 import { useState, useEffect } from "react";
 import { SectionHeader } from "@/components/common/SectionHeader";
+import Image from "next/image";
+import { MyCard } from "@/components/common/Card";
 
 export function ProjectSection() {
     let projectData = project_data.map((data) => {
@@ -65,7 +67,7 @@ export function ProjectSection() {
                         </InputGroupAddon>
                     </InputGroup>
                 </div>
-                <div className="flex gap-2 mb-10">
+                <div className="flex gap-2 mb-10  flex-wrap">
                     <div>
                         <Button variant="outline" onClick={() => setPData(projectData)}>all</Button>
                     </div>
@@ -81,35 +83,10 @@ export function ProjectSection() {
                 </div>
                 {
                     pdata.length > 0 ?
-                        <div className="container mx-auto flex grid grid-cols-3 gap-4 ">
+                        <div className="container mx-auto flex grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 ">
                             {
                                 pdata.map((data, index) => (
-                                    <Card className="relative mx-auto w-full max-w-sm pt-0 transition-all hover:shadow-xl duration-500 hover:scale-103" key={index}>
-                                        <div className="absolute inset-0 z-30 aspect-video" />
-                                        <img
-                                            src={data.imageURL ? data.imageURL : "https://avatar.vercel.sh/shadcn1"}
-                                            alt={`project: ${data.imageURL}`}
-                                            className="relative z-20 aspect-video w-full object-cover brightness-100 dark:brightness-40"
-                                        />
-                                        <CardHeader className="flex flex-col flex-1">
-                                            <CardTitle className="font-bold">{data.title}</CardTitle>
-                                            <CardDescription className="text-xm text-muted-foreground flex-1     ">
-                                                {data.description}
-                                            </CardDescription>
-                                            <CardAction className="flex gap-2">
-                                                {
-                                                    data.category.map((arrayData, arrayDataIndex) => (
-                                                        <Badge variant="secondary" key={arrayDataIndex}>{arrayData}</Badge>
-                                                    ))
-                                                }
-                                            </CardAction>
-                                        </CardHeader>
-                                        <CardFooter className="">
-                                            <Link href={data.link} target="_blank">
-                                                <Button className="w-full">View Projects</Button>
-                                            </Link>
-                                        </CardFooter>
-                                    </Card>
+                                    <MyCard imageURL={data.imageURL} title={data.title} description={data.description} category={data.category} link={data.link} key={index} />
                                 ))
                             }
 
