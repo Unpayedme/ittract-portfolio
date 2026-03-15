@@ -30,9 +30,9 @@ export function Header() {
 
     return (
         <div className="flex flex-col border-b-2 border-slate-200 w-full h-18 flex-shrink-0 sticky top-0 z-50 bg-white dark:bg-black">
-            <div className="container mx-auto flex gap-2 justify-around items-center size-full md:px-30">
+            <div className="container mx-auto flex gap-2 items-center size-full px-3 sm:px-20">
                 <h1 className="font-bold text-2xl flex justify-start">SEFUESCA.DEV</h1>
-                <div className="flex sm:hidden items-center justify-end gap-4">
+                <div className="flex lg:hidden items-center justify-end gap-4 flex-1">
                     <ModeToggle />
                     <Drawer direction="top">
                         <DrawerTitle>
@@ -73,7 +73,7 @@ export function Header() {
                         </DrawerContent>
                     </Drawer>
                 </div>
-                <div className="flex gap-5 items-center hidden sm:flex">
+                <div className="flex gap-5 items-center hidden lg:flex justify-end flex-1 px-10">
                     <ul className="gap-5 text-md font-bold flex">
                         <li>
                             <Link href="/" className="hover:underline">
