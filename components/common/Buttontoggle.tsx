@@ -9,7 +9,7 @@ export function ModeToggle() {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
-  // Essential for Next.js to avoid hydration errors
+  
   useEffect(() => {
     setMounted(true)
   }, [])
