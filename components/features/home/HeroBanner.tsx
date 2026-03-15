@@ -8,7 +8,7 @@ import { LucideIcon, Mail, PhoneCall, Github, Facebook, Linkedin } from "lucide-
 export function HeroBanner() {
     return (
         <Section className="flex">
-            <div className="container mx-auto flex xl:flex-row lg:flex-cols items-center gap-3 flex-col md:gap-1 border-t-2 border-b-2 border-slate-200 py-20 w-full flex-1">
+            <div className="container mx-auto flex md:flex-row items-center gap-3 flex-col md:gap-1 border-t-2 border-b-2 border-slate-200 py-20 w-full flex-1">
 
                 <div className="flex-1 items-center flex justify-center mb-5">
                     <ProfileImage />
@@ -16,7 +16,7 @@ export function HeroBanner() {
 
                 <div className="flex-1 flex flex-col gap-3  md:text-center">
                     <div className="w-full">
-                        <h1 className="text-foreground sm:text-2xl lg:text-5xl md:text-4xl font-bold text-center text-2xl">Hi, I`m John Vincent</h1>
+                        <h1 className="text-foreground sm:text-2xl lg:text-5xl md:text-2xl font-bold text-center text-2xl">Hi, I`m John Vincent</h1>
                         <p className="text-muted-foreground text-sm md:text-md text-center px-4 ">A dedicated software developer building modern, responsive digital products. From web applications to custom software, I focus on delivering clean code and captivating interfaces that drive user engagement.
                         </p>
                     </div>
