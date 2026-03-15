@@ -20,8 +20,8 @@ export function HeroBanner() {
                         <p className="text-muted-foreground text-sm md:text-md text-center px-4 ">A dedicated software developer building modern, responsive digital products. From web applications to custom software, I focus on delivering clean code and captivating interfaces that drive user engagement.
                         </p>
                     </div>
-
-                    <div className="flex items-center gap-4 justify-center ">
+                    
+                    <div className="flex-col flex items-center gap-1 md:gap-4 sm:flex-row md:flex-row justify-center ">
                         <Link href="/projects" className="">
                             <Button variant={"destructive"} className="h-10 w-50">View Projects</Button>
                         </Link>

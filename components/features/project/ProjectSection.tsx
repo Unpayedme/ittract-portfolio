@@ -24,6 +24,7 @@ import { SearchIcon, Mail } from "lucide-react";
 import { project_data, categories, Project_type } from "@/constant/project";
 import Link from "next/link"
 import { useState, useEffect } from "react";
+import { SectionHeader } from "@/components/common/SectionHeader";
 
 export function ProjectSection() {
     let projectData = project_data.map((data) => {
@@ -47,10 +48,15 @@ export function ProjectSection() {
     return (
         <Section>
             <div className="container mx-auto flex flex-col gap-3 mb-20">
-                <div className="items-center">
+                <SectionHeader
+                    title="My Projects"
+                    description="Building functional digital experiences with a focus on refined aesthetics and clean code."
+                    className=""
+                />
+                {/* <div className="items-center">
                     <h1 className="text-foregroud font-extrabold text-3xl text-center">My Projects</h1>
                     <p className="text-muted-foreground text-center text-xm">Building functional digital experiences with a focus on refined aesthetics and clean code.</p>
-                </div>
+                </div> */}
                 <div>
                     <InputGroup className="">
                         <InputGroupInput placeholder="Search..." />

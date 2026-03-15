@@ -12,14 +12,19 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import { SectionHeader } from "@/components/common/SectionHeader";
 
 export function FeaturedProjects() {
     return (
         <Section>
             <div className="container mx-auto flex flex-col gap-10 border-t-2 border-b-2 border-slate-200 py-20">
-                <div className="">
-                    <h1 className="text-center lg:text-5xl font-extrabold">Featured Projects</h1>
-                </div>
+
+                <SectionHeader 
+                    title="Featured Projects" 
+                    description="A collection of web applications and system visualizations defined by technical logic and clean execution."
+                    className=""
+                />
+
                 <div className="flex gap-5 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
                     {
                         feature_projects.map((data, index) => (
