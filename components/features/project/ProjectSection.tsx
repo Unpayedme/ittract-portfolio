@@ -35,15 +35,10 @@ export function ProjectSection() {
     const filteredProjects = project_data.filter((project) => {
         const matchesSearch = project.title.toLowerCase().startsWith(inputValue.toLowerCase())
         const matchesCategory = Filter === "All" || project.category.includes(Filter);
-        return  matchesSearch && matchesCategory;
+        return  matchesSearch && matchesCategory;   
     });
-    console.log(filteredProjects)
-    // function f(e: any){
-    //     setInputValue(e.target.value)
-    //     pdata.filter(p => p.title.toLowerCase().includes(inputValue.toLowerCase()));
 
-    // }
-    //const filtered = pdata.filter(p => p.title.toLowerCase().includes(inputValue.toLowerCase()));
+    console.log("filtered data: ",filteredProjects)
 
     return (
         <Section>
@@ -65,12 +60,12 @@ export function ProjectSection() {
                 </div>
                 <div className="flex gap-2 mb-10  flex-wrap">
                     <div>
-                        <Button variant="outline" onClick={() => setFilter("All")}>all</Button>
+                        <Button variant="outline" onClick={() => setFilter("All")} className="h-8">all</Button>
                     </div>
                     {
                         categories.map((data, index) => (
                             <div className="" key={index}>
-                                <Button variant="outline" onClick={() => setFilter(data.category || "All")}>
+                                <Button variant="outline" onClick={() => setFilter(data.category || "All")} className="h-8">
                                     {data.category.toLowerCase()}
                                 </Button>
                             </div>
