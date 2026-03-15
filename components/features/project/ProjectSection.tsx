@@ -29,39 +29,35 @@ import Image from "next/image";
 import { MyCard } from "@/components/common/Card";
 
 export function ProjectSection() {
-    let projectData = project_data.map((data) => {
-        return {
-            ...data,
-            category: data.category.map(x => x.toUpperCase().trim())
-        };
+    const [Filter , setFilter] = useState("All")
+    const [ inputValue, setInputValue ] = useState("");
+
+    const filteredProjects = project_data.filter((project) => {
+        const matchesSearch = project.title.toLowerCase().startsWith(inputValue.toLowerCase())
+        const matchesCategory = Filter === "All" || project.category.includes(Filter);
+        return  matchesSearch && matchesCategory;
     });
+    console.log(filteredProjects)
+    // function f(e: any){
+    //     setInputValue(e.target.value)
+    //     pdata.filter(p => p.title.toLowerCase().includes(inputValue.toLowerCase()));
 
-    //console.log("filtereddata: ",projectData);        
-
-    const [pdata, setPData] = useState(projectData);
-
-    function filterByCategory(data: Project_type[], cat: string) {
-        cat.toUpperCase().trim()
-        let filteredData = data.filter(data => data.category.includes(cat));
-        setPData(filteredData);
-    }
-    //console.log("curerentData: ", pdata)
+    // }
+    //const filtered = pdata.filter(p => p.title.toLowerCase().includes(inputValue.toLowerCase()));
 
     return (
         <Section>
             <div className="container mx-auto flex flex-col gap-3 mb-20">
+
                 <SectionHeader
                     title="My Projects"
                     description="Building functional digital experiences with a focus on refined aesthetics and clean code."
                     className=""
                 />
-                {/* <div className="items-center">
-                    <h1 className="text-foregroud font-extrabold text-3xl text-center">My Projects</h1>
-                    <p className="text-muted-foreground text-center text-xm">Building functional digital experiences with a focus on refined aesthetics and clean code.</p>
-                </div> */}
+    
                 <div>
                     <InputGroup className="">
-                        <InputGroupInput placeholder="Search..." />
+                        <InputGroupInput placeholder="Search..." value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
                         <InputGroupAddon>
                             <SearchIcon />
                         </InputGroupAddon>
@@ -69,12 +65,12 @@ export function ProjectSection() {
                 </div>
                 <div className="flex gap-2 mb-10  flex-wrap">
                     <div>
-                        <Button variant="outline" onClick={() => setPData(projectData)}>all</Button>
+                        <Button variant="outline" onClick={() => setFilter("All")}>all</Button>
                     </div>
                     {
                         categories.map((data, index) => (
                             <div className="" key={index}>
-                                <Button variant="outline" onClick={() => filterByCategory(project_data, data.category)}>
+                                <Button variant="outline" onClick={() => setFilter(data.category || "All")}>
                                     {data.category.toLowerCase()}
                                 </Button>
                             </div>
@@ -82,10 +78,10 @@ export function ProjectSection() {
                     }
                 </div>
                 {
-                    pdata.length > 0 ?
+                    (filteredProjects.length > 0) ?
                         <div className="container mx-auto flex grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 ">
                             {
-                                pdata.map((data, index) => (
+                                filteredProjects.map((data, index) => (
                                     <MyCard imageURL={data.imageURL} title={data.title} description={data.description} category={data.category} link={data.link} key={index} />
                                 ))
                             }

@@ -32,7 +32,7 @@ type list_type = {
 
 export function Header() {
     const currentFilePath = usePathname();
-    console.log(currentFilePath)
+    //console.log(currentFilePath)
     const myList: list_type[] = [
         {
             path: "/",
