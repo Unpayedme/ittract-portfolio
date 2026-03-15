@@ -18,7 +18,6 @@ export function ContactPreview() {
                     </Button>
                 </div>
             </div>
-
         </Section>
     );
 }

@@ -15,7 +15,7 @@ export function ProfileImage() {
                     width={350} 
                     height={350} 
                     loading="eager"
-                    className="grayscale hover:grayscale-0 transition-all duration-500 hover:scale-102 rounded-md aspect-[3/4]  ease-in animate-pulse-red hover:animate-none hover:shadow-lg hover:shadow-red-500/50" 
+                    className="grayscale hover:grayscale-0 transition-transform duration-500 hover:scale-102 rounded-md aspect-[3/4] rotate-2 hover:rotate-0 ease-in animate-pulse  hover:shadow-lg hover:shadow-red-500/50" 
                 />
         </div>
     );

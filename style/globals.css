@@ -138,7 +138,7 @@
   }
 }
 .animate-scrollbar{
-  animation: scrollBar 0.5s linear;
+  animation: scrollBar linear;
   animation-timeline: view();
   animation-range: entry 0% cover 40%;
 }
