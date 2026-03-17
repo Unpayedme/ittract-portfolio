@@ -50,6 +50,10 @@ export function Header() {
             path: "/projects",
             name: "PROJECTS",
         },
+        {
+            path: "/blog",
+            name: "BLOG",
+        },
     ]
 
     

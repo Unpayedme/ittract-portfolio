@@ -127,7 +127,7 @@
     }
 }
 
-@keyframes scrollBar {
+/* @keyframes scrollBar {
   from {
     opacity: 0;
     transform: scale(0.5);
@@ -141,4 +141,4 @@
   animation: scrollBar linear;
   animation-timeline: view();
   animation-range: entry 0% cover 40%;
-}
+} */

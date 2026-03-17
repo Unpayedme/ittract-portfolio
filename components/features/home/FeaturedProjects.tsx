@@ -29,7 +29,7 @@ export function FeaturedProjects() {
                 <div className="flex gap-5 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
                     {
                         feature_projects.map((data, index) => (
-                            <MyCard imageURL={data.imageURL} title={data.title} description={data.description} category={data.category} link={data.link} key={index} />
+                            <MyCard key={index} props={data} />
                         ))
                     }
                 </div>

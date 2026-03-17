@@ -77,7 +77,7 @@ export function ProjectSection() {
                         <div className="container mx-auto flex grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 ">
                             {
                                 filteredProjects.map((data, index) => (
-                                    <MyCard imageURL={data.imageURL} title={data.title} description={data.description} category={data.category} link={data.link} key={index} />
+                                    <MyCard key={index} props={data} />
                                 ))
                             }
 
