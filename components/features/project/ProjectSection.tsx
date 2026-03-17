@@ -41,7 +41,7 @@ export function ProjectSection() {
     console.log("filtered data: ",filteredProjects)
 
     return (
-        <Section>
+        <Section className="">
             <div className="container mx-auto flex flex-col gap-3 mb-20">
 
                 <SectionHeader

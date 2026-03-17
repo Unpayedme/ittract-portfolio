@@ -56,12 +56,12 @@ export function Header() {
         },
     ]
 
-    
+
     return (
         <div className="flex flex-col border-b-2 border-slate-200 w-full h-18 flex-shrink-0 sticky top-0 z-50 bg-white dark:bg-black">
             <div className="container mx-auto flex gap-2 items-center size-full px-3 sm:px-20">
                 <h1 className="font-bold text-2xl flex justify-start">SEFUESCA.DEV</h1>
-                <div className="flex lg:hidden items-center justify-end gap-4 flex-1">
+                <div className="flex lg:hidden justify-end gap-4 flex-1">
                     <ModeToggle />
                     <Drawer direction="top">
                         <DrawerTitle>
@@ -78,19 +78,22 @@ export function Header() {
                                     <X className="items-center size-10 flex justify-center text-center" />
                                 </DrawerClose>
                             </DrawerHeader>
-                            <DrawerClose asChild >
-                                <Link href={"/"}>HOME</Link>
-                            </DrawerClose>
-                            <DrawerClose asChild>
-                                <Link href={"/about"} >ABOUT</Link>
-                            </DrawerClose>
-                            <DrawerClose asChild>
-                                <Link href={"/contact"} >CONTACT</Link>
-                            </DrawerClose>
-                            <DrawerClose asChild>
-                                <Link href={"/projects"}>PROJECTS</Link>
-                            </DrawerClose>  
-                            <DrawerFooter>
+                            <div className="flex flex-col gap-2 justify-start">
+                                <DrawerClose asChild>
+                                    <Link href={"/"}>HOME</Link>
+                                </DrawerClose>
+                                <DrawerClose asChild>
+                                    <Link href={"/about"} >ABOUT</Link>
+                                </DrawerClose>
+                                <DrawerClose asChild>
+                                    <Link href={"/contact"} >CONTACT</Link>
+                                </DrawerClose>
+                                <DrawerClose asChild>
+                                    <Link href={"/projects"}>PROJECTS</Link>
+                                </DrawerClose>
+                            </div>
+
+                            {/* <DrawerFooter>
                                 <DrawerClose>
                                     <Button asChild className="w-full h-10">
                                         <Link href="/contact" className="hover:underline">
@@ -98,25 +101,25 @@ export function Header() {
                                         </Link>
                                     </Button>
                                 </DrawerClose>
-                            </DrawerFooter>
+                            </DrawerFooter> */}
                         </DrawerContent>
                     </Drawer>
                 </div>
                 <div className="flex gap-5 items-center hidden lg:flex justify-end flex-1 px-10">
                     <ul className="gap-5 text-lg font-bold flex">
                         {
-                            myList.map((list, index) => list.path == currentFilePath ? 
-                                <li key={index} className="underline text-muted-foreground">
+                            myList.map((list, index) => list.path == currentFilePath ?
+                                <li key={index} className="underline text-muted-foreground ">
                                     <Link href={list.path}>
                                         {list.name}
                                     </Link>
-                                </li>     
+                                </li>
                                 :
                                 <li key={index} className="hover:underline">
                                     <Link href={list.path}>
                                         {list.name}
-                                    </Link> 
-                                </li>   
+                                    </Link>
+                                </li>
                             )
                         }
                     </ul>
