@@ -1,6 +1,6 @@
 
 
-export function BlogSlug(){
+export default function BlogSlug(){
     return(
         <div>
             adsf
