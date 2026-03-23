@@ -69,7 +69,7 @@ export function Header() {
                                 <Menu />
                             </DrawerTrigger>
                         </DrawerTitle>
-                        <DrawerContent className="text-center text-lg bg-white gap-0 flex flex-col justify-center dark:text-black m-w-full opacity-100">
+                        <DrawerContent className="text-center text-lg bg-white gap-0 flex flex-col justify-center dark:text-black m-w-full opacity-100 top-16">
                             <DrawerHeader className="flex flex-row justify-between">
                                 <DrawerDescription className="font-bold text-2xl flex justify-start text-center items-center pr-10">
                                     SEFUESCA.DEV
