@@ -24,6 +24,8 @@ import {
     DrawerTrigger,
 } from "@/components/ui/drawer";
 import { usePathname } from 'next/navigation';
+import { useState } from "react";
+import { link } from "node:fs";
 
 type list_type = {
     path: string;
@@ -32,6 +34,7 @@ type list_type = {
 
 export function Header() {
     const currentFilePath = usePathname();
+    const [isOpen, setIsOpen] = useState(false);
     //console.log(currentFilePath)
     const myList: list_type[] = [
         {
@@ -61,7 +64,46 @@ export function Header() {
         <div className="flex flex-col border-b-2 border-slate-200 w-full h-18 flex-shrink-0 sticky top-0 z-50 bg-white dark:bg-black">
             <div className="container mx-auto flex gap-2 items-center size-full px-3 sm:px-20">
                 <h1 className="font-bold text-2xl flex justify-start">SEFUESCA.DEV</h1>
-                <div className="flex lg:hidden justify-end gap-4 flex-1">
+                {
+                    isOpen ?
+                        <div className="flex flex-col">
+                            <div className="fixed top-18 left-0 w-full bg-gray-50 shadow-md transition-transform transform z-40 md:hidden translate-y-0 opacity-100">
+                                <ul className="gap-5 text-lg font-bold flex flex-col p-4 font-extrabold">
+                                    {
+                                        myList.map((list, index) => list.path == currentFilePath ?
+                                            <li key={index} className="underline text-muted-foreground bg-slate-200/40 h-10 rounded-full pl-5">
+                                                <Link href={list.path} onClick={() => { setIsOpen(false)}} className="text-center">
+                                                    {list.name}
+                                                </Link>
+                                            </li>
+                                            :
+                                            <li key={index} className="hover:underline">
+                                                <Link href={list.path}>
+                                                    {list.name}
+                                                </Link>
+                                            </li>
+                                        )
+                                    }
+                                </ul>
+
+                            </div>
+                            <div className="fixed top-36 left-0 flex-1 bg-none">
+
+                            </div>
+                        </div>
+
+                        :
+                        <div className="flex lg:hidden justify-end gap-4 flex-1">
+                            {
+                                isOpen ? 
+                                <X className="items-center size-10 flex justify-center text-center" onClick={() => { setIsOpen(false) }}/>
+                                :
+                                <Menu onClick={() => { setIsOpen(true) }} />
+                            }
+                            
+                        </div>
+                }
+                {/* <div className="flex lg:hidden justify-end gap-4 flex-1">
                     <ModeToggle />
                     <Drawer direction="top">
                         <DrawerTitle>
@@ -93,7 +135,7 @@ export function Header() {
                                 </DrawerClose>
                             </div>
 
-                            {/* <DrawerFooter>
+                           <DrawerFooter>
                                 <DrawerClose>
                                     <Button asChild className="w-full h-10">
                                         <Link href="/contact" className="hover:underline">
@@ -101,10 +143,10 @@ export function Header() {
                                         </Link>
                                     </Button>
                                 </DrawerClose>
-                            </DrawerFooter> */}
+                            </DrawerFooter>
                         </DrawerContent>
                     </Drawer>
-                </div>
+                </div> */}
                 <div className="flex gap-5 items-center hidden lg:flex justify-end flex-1 px-10">
                     <ul className="gap-5 text-lg font-bold flex">
                         {
