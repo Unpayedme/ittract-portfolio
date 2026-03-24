@@ -67,11 +67,12 @@ export function Header() {
                 {
                     isOpen ?
                         <div className="flex flex-col justify-end lg:hidden justify-end gap-4 flex-1">
-                            <div className="flex-1 flex justify-end">
-                                <X onClick={() => { setIsOpen(false) }} className="text-2xl"/>
+                            <div className="flex-1 flex justify-end gap-3">
+                                <ModeToggle />
+                                <X onClick={() => { setIsOpen(false) }} className="text-center items-center flex justify-center" size={35}/>
                             </div>
                             <div 
-                                className={`fixed top-18 left-0 w-full bg-gray-50 shadow-md transition-transform transform z-40 lg:hidden opacity-100 delay-200 duration-300 ${ isOpen ? "" : "" }`}
+                                className={`fixed top-18 left-0 w-full bg-gray-50 shadow-md transition-transform transform z-40 lg:hidden opacity-100 delay-200 duration-300 ${ isOpen ? "" : "" } dark:bg-black border-b border-slate-200`}
                             >
                                 <ul className="gap-5 text-lg font-bold flex flex-col p-4 font-extrabold">
                                     {
@@ -92,16 +93,15 @@ export function Header() {
                                 </ul>   
 
                             </div>
-                            <div className="fixed top-36 left-0 flex-1 bg-none h-full w-full dropdown backdrop-blur-xs flex-1">
+                            <div className="fixed top-36 left-0 flex-1 bg-none h-full w-full dropdown backdrop-blur-sm flex-1">
 
                             </div>
                         </div>
 
                         :
-                        <div className="flex lg:hidden justify-end gap-4 flex-1">
-                            {
-                                <Menu onClick={() => { setIsOpen(true) }} />
-                            }
+                        <div className="flex lg:hidden justify-end flex-1 gap-3">
+                            <ModeToggle />
+                            <Menu onClick={() => { setIsOpen(true) }} size={35} className="text-center items-center flex justify-center"/>
                         </div>
                 }
                 {/* <div className="flex lg:hidden justify-end gap-4 flex-1">
