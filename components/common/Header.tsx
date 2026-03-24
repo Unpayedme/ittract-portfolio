@@ -71,7 +71,7 @@ export function Header() {
                                 <X onClick={() => { setIsOpen(false) }} className="text-2xl"/>
                             </div>
                             <div 
-                                className={`fixed top-18 left-0 w-full bg-gray-50 shadow-md transition-transform transform z-40 md:hidden opacity-100 delay-200 duration-300 ${ isOpen ? "" : "" }`}
+                                className={`fixed top-18 left-0 w-full bg-gray-50 shadow-md transition-transform transform z-40 lg:hidden opacity-100 delay-200 duration-300 ${ isOpen ? "" : "" }`}
                             >
                                 <ul className="gap-5 text-lg font-bold flex flex-col p-4 font-extrabold">
                                     {
