@@ -70,7 +70,9 @@ export function Header() {
                             <div className="flex-1 flex justify-end">
                                 <X onClick={() => { setIsOpen(false) }} className="text-2xl"/>
                             </div>
-                            <div className="fixed top-18 left-0 w-full bg-gray-50 shadow-md transition-all transform z-40 md:hidden translate-y-0 opacity-100 delay-200 duration-300">
+                            <div 
+                                className={`fixed top-18 left-0 w-full bg-gray-50 shadow-md transition-transform transform z-40 md:hidden opacity-100 delay-200 duration-300 ${ isOpen ? "" : "" }`}
+                            >
                                 <ul className="gap-5 text-lg font-bold flex flex-col p-4 font-extrabold">
                                     {
                                         myList.map((list, index) => list.path == currentFilePath ?
@@ -90,9 +92,9 @@ export function Header() {
                                 </ul>   
 
                             </div>
-                            {/* <div className="fixed top-36 left-0 flex-1 bg-none">
+                            <div className="fixed top-36 left-0 flex-1 bg-none h-full w-full dropdown backdrop-blur-xs flex-1">
 
-                            </div> */}
+                            </div>
                         </div>
 
                         :
