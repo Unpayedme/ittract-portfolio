@@ -61,29 +61,29 @@ export function Header() {
 
 
     return (
-        <div className="flex flex-col border-b-2 border-slate-200 w-full h-18 flex-shrink-0 sticky top-0 z-50 bg-white dark:bg-black">
+        <div className="flex flex-col border-b-2 border-slate-200 w-full h-20 flex-shrink-0 sticky top-0 z-50 bg-white dark:bg-black">
             <div className="container mx-auto flex gap-2 items-center size-full px-3 sm:px-20">
                 <h1 className="font-bold text-2xl flex justify-start">SEFUESCA.DEV</h1>
                 {
                     isOpen ?
                         <div className="flex flex-col justify-end lg:hidden justify-end gap-4 flex-1">
-                            <div className="flex-1 flex justify-end gap-3">
+                            <div className="flex-1 flex justify-end gap-3 items-center text-center">
                                 <ModeToggle />
-                                <X onClick={() => { setIsOpen(false) }} className="text-center items-center flex justify-center" size={35}/>
+                                <X onClick={() => { setIsOpen(false) }} size={30}/>
                             </div>
                             <div 
-                                className={`fixed top-18 left-0 w-full bg-gray-50 shadow-md transition-transform transform z-40 lg:hidden opacity-100 delay-200 duration-300 ${ isOpen ? "" : "" } dark:bg-black border-b border-slate-200`}
+                                className={`fixed top-20 left-0  w-full bg-gray-50 shadow-md transition-transform transform z-40 lg:hidden duration-300 ${ isOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0" } dark:bg-black border-b border-slate-200`}
                             >
                                 <ul className="gap-5 text-lg font-bold flex flex-col p-4 font-extrabold">
                                     {
                                         myList.map((list, index) => list.path == currentFilePath ?
-                                            <Link href={list.path} onClick={() =>{() => { setIsOpen(false)}}} key={index} className="underline text-muted-foreground bg-slate-200/40 h-10 rounded-full pl-5">
+                                            <Link href={list.path} onClick={() => {setIsOpen(false)}} key={index} className="underline text-muted-foreground bg-slate-200/40 h-10 rounded-full pl-5">
                                                 <li className="text-center items-center flex h-full w-full"    >
                                                     {list.name}
                                                 </li>
                                             </Link>
                                             :
-                                            <Link href={list.path} onClick={() => { setIsOpen(false)}} key={index}>
+                                            <Link href={list.path} onClick={() => {setIsOpen(false)}} key={index}>
                                                 <li key={index} className="hover:underline">
                                                     {list.name}
                                                 </li>
@@ -91,17 +91,16 @@ export function Header() {
                                         )
                                     }
                                 </ul>   
-
                             </div>
-                            <div className="fixed top-36 left-0 flex-1 bg-none h-full w-full dropdown backdrop-blur-sm flex-1">
+                            <div className="fixed top-36 left-0 bg-none h-full w-full dropdown backdrop-blur-sm z-30" onClick={() => {setIsOpen(false)}}>
 
                             </div>
                         </div>
 
                         :
-                        <div className="flex lg:hidden justify-end flex-1 gap-3">
+                        <div className="flex lg:hidden justify-end flex-1 gap-3 items-center text-center">
                             <ModeToggle />
-                            <Menu onClick={() => { setIsOpen(true) }} size={35} className="text-center items-center flex justify-center"/>
+                            <Menu onClick={() => { setIsOpen(true) }} size={30}/>
                         </div>
                 }
                 {/* <div className="flex lg:hidden justify-end gap-4 flex-1">
