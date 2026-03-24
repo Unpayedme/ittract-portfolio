@@ -66,41 +66,40 @@ export function Header() {
                 <h1 className="font-bold text-2xl flex justify-start">SEFUESCA.DEV</h1>
                 {
                     isOpen ?
-                        <div className="flex flex-col">
-                            <div className="fixed top-18 left-0 w-full bg-gray-50 shadow-md transition-transform transform z-40 md:hidden translate-y-0 opacity-100">
+                        <div className="flex flex-col justify-end lg:hidden justify-end gap-4 flex-1">
+                            <div className="flex-1 flex justify-end">
+                                <X onClick={() => { setIsOpen(false) }} className="text-2xl"/>
+                            </div>
+                            <div className="fixed top-18 left-0 w-full bg-gray-50 shadow-md transition-all transform z-40 md:hidden translate-y-0 opacity-100 delay-200 duration-300">
                                 <ul className="gap-5 text-lg font-bold flex flex-col p-4 font-extrabold">
                                     {
                                         myList.map((list, index) => list.path == currentFilePath ?
-                                            <li key={index} className="underline text-muted-foreground bg-slate-200/40 h-10 rounded-full pl-5">
-                                                <Link href={list.path} onClick={() => { setIsOpen(false)}} className="text-center">
+                                            <Link href={list.path} onClick={() =>{() => { setIsOpen(false)}}} key={index} className="underline text-muted-foreground bg-slate-200/40 h-10 rounded-full pl-5">
+                                                <li className="text-center items-center flex h-full w-full"    >
                                                     {list.name}
-                                                </Link>
-                                            </li>
+                                                </li>
+                                            </Link>
                                             :
-                                            <li key={index} className="hover:underline">
-                                                <Link href={list.path}>
+                                            <Link href={list.path} onClick={() => { setIsOpen(false)}} key={index}>
+                                                <li key={index} className="hover:underline">
                                                     {list.name}
-                                                </Link>
-                                            </li>
+                                                </li>
+                                            </Link>
                                         )
                                     }
-                                </ul>
+                                </ul>   
 
                             </div>
-                            <div className="fixed top-36 left-0 flex-1 bg-none">
+                            {/* <div className="fixed top-36 left-0 flex-1 bg-none">
 
-                            </div>
+                            </div> */}
                         </div>
 
                         :
                         <div className="flex lg:hidden justify-end gap-4 flex-1">
                             {
-                                isOpen ? 
-                                <X className="items-center size-10 flex justify-center text-center" onClick={() => { setIsOpen(false) }}/>
-                                :
                                 <Menu onClick={() => { setIsOpen(true) }} />
                             }
-                            
                         </div>
                 }
                 {/* <div className="flex lg:hidden justify-end gap-4 flex-1">
