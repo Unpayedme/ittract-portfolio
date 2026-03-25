@@ -61,7 +61,7 @@ export function Header() {
 
 
     return (
-        <div className="flex flex-col shadow-md/20 w-full h-20 flex-shrink-0 sticky top-0 z-50 dark:border-2 dark:border-slate-200 backdrop-blur-lg">
+        <div className="flex flex-col shadow-md/20 w-full h-20 flex-shrink-0 sticky top-0 z-50 dark:border-b-2 dark:border-slate-200 backdrop-blur-lg">
             <div className="container mx-auto flex gap-2 items-center size-full px-3 sm:px-20">
                 <h1 className="font-bold text-2xl flex justify-start">SEFUESCA.DEV</h1>
                 <div className="flex lg:hidden justify-end flex-1 gap-3 items-center text-center">
@@ -74,7 +74,7 @@ export function Header() {
                 </div>
 
                 <div
-                    className={`fixed top-20 left-0 w-full bg-gray-50 shadow-md transform transition-all duration-500 ease-in-out z-40 lg:hidden
+                    className={`fixed top-20 left-0 w-full bg-gray-50 shadow-md transform transition-all duration-500 linear z-40 lg:hidden
                                 ${isOpen ? "translate-y-0 opacity-100"
                             :
                             "-translate-y-2 opacity-0 pointer-events-none"
