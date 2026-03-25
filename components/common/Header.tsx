@@ -61,92 +61,52 @@ export function Header() {
 
 
     return (
-        <div className="flex flex-col border-b-2 border-slate-200 w-full h-20 flex-shrink-0 sticky top-0 z-50 bg-white dark:bg-black">
+        <div className="flex flex-col shadow-md/20 w-full h-20 flex-shrink-0 sticky top-0 z-50 dark:border-2 dark:border-slate-200 backdrop-blur-lg">
             <div className="container mx-auto flex gap-2 items-center size-full px-3 sm:px-20">
                 <h1 className="font-bold text-2xl flex justify-start">SEFUESCA.DEV</h1>
-                {
-                    isOpen ?
-                        <div className="flex flex-col justify-end lg:hidden justify-end gap-4 flex-1">
-                            <div className="flex-1 flex justify-end gap-3 items-center text-center">
-                                <ModeToggle />
-                                <X onClick={() => { setIsOpen(false) }} size={30}/>
-                            </div>
-                            <div 
-                                className={`fixed top-20 left-0  w-full bg-gray-50 shadow-md transition-transform transform z-40 lg:hidden duration-300 ${ isOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0" } dark:bg-black border-b border-slate-200`}
-                            >
-                                <ul className="gap-5 text-lg font-bold flex flex-col p-4 font-extrabold">
-                                    {
-                                        myList.map((list, index) => list.path == currentFilePath ?
-                                            <Link href={list.path} onClick={() => {setIsOpen(false)}} key={index} className="underline text-muted-foreground bg-slate-200/40 h-10 rounded-full pl-5">
-                                                <li className="text-center items-center flex h-full w-full"    >
-                                                    {list.name}
-                                                </li>
-                                            </Link>
-                                            :
-                                            <Link href={list.path} onClick={() => {setIsOpen(false)}} key={index}>
-                                                <li key={index} className="hover:underline">
-                                                    {list.name}
-                                                </li>
-                                            </Link>
-                                        )
-                                    }
-                                </ul>   
-                            </div>
-                            <div className="fixed top-36 left-0 bg-none h-full w-full dropdown backdrop-blur-sm z-30" onClick={() => {setIsOpen(false)}}>
-
-                            </div>
-                        </div>
-
-                        :
-                        <div className="flex lg:hidden justify-end flex-1 gap-3 items-center text-center">
-                            <ModeToggle />
-                            <Menu onClick={() => { setIsOpen(true) }} size={30}/>
-                        </div>
-                }
-                {/* <div className="flex lg:hidden justify-end gap-4 flex-1">
+                <div className="flex lg:hidden justify-end flex-1 gap-3 items-center text-center">
                     <ModeToggle />
-                    <Drawer direction="top">
-                        <DrawerTitle>
-                            <DrawerTrigger>
-                                <Menu />
-                            </DrawerTrigger>
-                        </DrawerTitle>
-                        <DrawerContent className="text-center text-lg bg-white gap-0 flex flex-col justify-center dark:text-black m-w-full opacity-100 top-16">
-                            <DrawerHeader className="flex flex-row justify-between">
-                                <DrawerDescription className="font-bold text-2xl flex justify-start text-center items-center pr-10">
-                                    SEFUESCA.DEV
-                                </DrawerDescription>
-                                <DrawerClose className="flex gap-3 justify-end pl-10">
-                                    <X className="items-center size-10 flex justify-center text-center" />
-                                </DrawerClose>
-                            </DrawerHeader>
-                            <div className="flex flex-col gap-2 justify-start">
-                                <DrawerClose asChild>
-                                    <Link href={"/"}>HOME</Link>
-                                </DrawerClose>
-                                <DrawerClose asChild>
-                                    <Link href={"/about"} >ABOUT</Link>
-                                </DrawerClose>
-                                <DrawerClose asChild>
-                                    <Link href={"/contact"} >CONTACT</Link>
-                                </DrawerClose>
-                                <DrawerClose asChild>
-                                    <Link href={"/projects"}>PROJECTS</Link>
-                                </DrawerClose>
-                            </div>
+                    {isOpen ? (
+                        <X onClick={() => setIsOpen(false)} size={30} />
+                    ) : (
+                        <Menu onClick={() => setIsOpen(true)} size={30} />
+                    )}
+                </div>
 
-                           <DrawerFooter>
-                                <DrawerClose>
-                                    <Button asChild className="w-full h-10">
-                                        <Link href="/contact" className="hover:underline">
-                                            CONTACT
-                                        </Link>
-                                    </Button>
-                                </DrawerClose>
-                            </DrawerFooter>
-                        </DrawerContent>
-                    </Drawer>
-                </div> */}
+                <div
+                    className={`fixed top-20 left-0 w-full bg-gray-50 shadow-md transform transition-all duration-500 ease-in-out z-40 lg:hidden
+                                ${isOpen ? "translate-y-0 opacity-100"
+                            :
+                            "-translate-y-2 opacity-0 pointer-events-none"
+                        } dark:bg-black border-b border-slate-200`}
+                >
+                    <ul className="gap-5 text-lg font-bold flex flex-col p-4 font-extrabold">
+                        {myList.map((list, index) =>
+                            list.path == currentFilePath ? (
+                                <Link href={list.path} onClick={() => setIsOpen(false)} key={index}
+                                    className="underline text-muted-foreground bg-slate-200/40 h-10 rounded-full pl-5">
+                                    <li className="flex items-center h-full w-full">
+                                        {list.name}
+                                    </li>
+                                </Link>
+                            ) : (
+                                <Link href={list.path} onClick={() => setIsOpen(false)} key={index}>
+                                    <li className="hover:underline">
+                                        {list.name}
+                                    </li>
+                                </Link>
+                            )
+                        )}
+                    </ul>
+                </div>
+                <div
+                    onClick={() => setIsOpen(false)}
+                    className={`fixed top-20 inset-0 z-30 transition-all duration-300
+                                ${isOpen ? "opacity-100 backdrop-blur-sm bg-black/20" 
+                                         : 
+                                           "opacity-0 pointer-events-none"}`}
+                />
+                
                 <div className="flex gap-5 items-center hidden lg:flex justify-end flex-1 px-10">
                     <ul className="gap-5 text-lg font-bold flex">
                         {
