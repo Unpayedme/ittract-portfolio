@@ -36,7 +36,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex flex-col min-h-screen bg-gradient-to-tl from-gray-900 to-gray-0 ">
+          <div className="flex flex-col min-h-screen bg-gradient-to-tl from-gray-700/40 to-gray-0">
             <Header />
             <main className="flex-1 container mx-auto px-6">
               {children}
