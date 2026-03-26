@@ -8,16 +8,17 @@ import { LucideIcon, Mail, PhoneCall, Github, Facebook, Linkedin } from "lucide-
 export function HeroBanner() {
     return (
         <Section className="flex">
-            <div className="container mx-auto flex md:flex-row items-center gap-3 flex-col md:gap-1 border-t-2 border-b-2 border-slate-200 py-20 w-full flex-1">
+            <div className="container mx-auto flex flex-col lg:flex-row items-center gap-3 flex-col md:gap-4 border-t-4 border-b-4 border-slate-200 w-full flex-1 py-20 my-20">
 
-                <div className="flex-1 items-center flex justify-center mb-5">
+                <div className="flex-1 items-center flex justify-center mb-5 w-full h-full">
                     <ProfileImage />
                 </div>
 
-                <div className="flex-1 flex flex-col gap-3  md:text-center">
-                    <div className="w-full">
-                        <h1 className="text-foreground sm:text-2xl lg:text-5xl md:text-2xl font-bold text-center text-2xl">Hi, I`m John Vincent</h1>
-                        <p className="text-muted-foreground text-sm md:text-md text-center px-4 ">A dedicated software developer building modern, responsive digital products. From web applications to custom software, I focus on delivering clean code and captivating interfaces that drive user engagement.
+                <div className="flex-1 flex flex-col gap-4  md:text-center">
+                    <div className="w-full flex flex-col gap-5">
+                        <h1 className="text-foreground sm:text-2xl xl:text-3xl md:text-2xl font-extrabold text-center text-xl ">Hi, I`m John Vincent Sefuesca</h1>
+                        <p className="text-muted-foreground text-sm md:text-md text-center px-4">
+                            A dedicated software developer building modern, responsive digital products. From web applications to custom software, I focus on delivering clean code and captivating interfaces that drive user engagement.
                         </p>
                     </div>
                     

@@ -4,25 +4,6 @@ import Link from "next/link";
 import { ModeToggle } from "@/components/common/Buttontoggle";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuGroup,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import {
-    Drawer,
-    DrawerClose,
-    DrawerContent,
-    DrawerDescription,
-    DrawerFooter,
-    DrawerHeader,
-    DrawerTitle,
-    DrawerTrigger,
-} from "@/components/ui/drawer";
 import { usePathname } from 'next/navigation';
 import { useState } from "react";
 import { link } from "node:fs";
@@ -74,11 +55,11 @@ export function Header() {
                 </div>
 
                 <div
-                    className={`fixed top-20 left-0 w-full bg-gray-50 shadow-md transform transition-all duration-500 linear z-40 lg:hidden
+                    className={`fixed top-20 left-0 w-full bg-gray-100/90 shadow-md transform transition-all duration-500 linear z-40 lg:hidden
                                 ${isOpen ? "translate-y-0 opacity-100"
                             :
                             "-translate-y-2 opacity-0 pointer-events-none"
-                        } dark:bg-black border-b border-slate-200`}
+                        } dark:bg-black border-b border-slate-200 backdrop-blur-xm`}
                 >
                     <ul className="gap-5 text-lg font-bold flex flex-col p-4 font-extrabold">
                         {myList.map((list, index) =>
@@ -101,11 +82,11 @@ export function Header() {
                 </div>
                 <div
                     onClick={() => setIsOpen(false)}
-                    className={`fixed top-20 inset-0 z-30 transition-all duration-300
-                                ${isOpen ? "opacity-100 backdrop-blur-sm bg-black/20" 
-                                         : 
-                                           "opacity-0 pointer-events-none"}`}
-                />
+                    className={`fixed top-20 z-30 transition-all transform duration-300
+                            ${isOpen ? "opacity-100 bg-black/20" : "opacity-0 pointer-events-none"} h-screen backdrop-blur-xl`}
+                >
+
+                </div>
                 
                 <div className="flex gap-5 items-center hidden lg:flex justify-end flex-1 px-10">
                     <ul className="gap-5 text-lg font-bold flex">
