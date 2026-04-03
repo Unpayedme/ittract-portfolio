@@ -3,43 +3,14 @@
 import Link from "next/link";
 import { ModeToggle } from "@/components/common/Buttontoggle";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { usePathname } from 'next/navigation';
 import { useState } from "react";
-import { link } from "node:fs";
-
-type list_type = {
-    path: string;
-    name: string;
-}
+import { myList } from "@/constant/navbar";
 
 export function Header() {
     const currentFilePath = usePathname();
     const [isOpen, setIsOpen] = useState(false);
-    //console.log(currentFilePath)
-    const myList: list_type[] = [
-        {
-            path: "/",
-            name: "HOME",
-        },
-        {
-            path: "/about",
-            name: "ABOUT",
-        },
-        {
-            path: "/contact",
-            name: "CONTACT",
-        },
-        {
-            path: "/projects",
-            name: "PROJECTS",
-        },
-        {
-            path: "/blog",
-            name: "BLOG",
-        },
-    ]
-
+    //console.log(currentFilePath) 
 
     return (
         <div className="flex flex-col shadow-md/20 w-full h-20 flex-shrink-0 sticky top-0 z-50 dark:border-b-2 dark:border-slate-200 backdrop-blur-lg">

@@ -5,7 +5,7 @@ import { SectionHeader } from   "@/components/common/SectionHeader";
 
 export function ContactSection() {
     return (
-        <Section className="">
+        <Section className="mb-20">
             <div className="container mx-auto flex flex-col flex-1 mb-5 border-t-2 border-b-2 border-slate-200 py-5 ">
                 <SectionHeader 
                     title="Get In Touch?"
